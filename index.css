@@ -1,0 +1,71 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+  width: 550px;
+  height: 780px;
+  background-color: red;
+  text-align: center;
+  padding: 82px 44px;
+  /* display: grid;
+  place-content: center;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(4 1fr);
+  border-bottom: gray 1px solid; */
+  display: flex;
+  flex-direction: column;
+  
+}
+header {
+    position: relative;
+    height: 208px;    
+    background-color: aqua;
+    
+}
+
+.header_nav {
+    width: 100%;
+    position: absolute;
+    top: 50%;  
+    display: flex;  
+
+   
+}
+
+.header_input {
+    width: 462px;
+    height: 20px;
+    position: absolute;
+    bottom: -10px;
+    left: 44px;
+    display: flex;
+}
+
+.header_input-text {
+    width: 342px;
+}
+
+.header_input-button {
+    width: 120px;
+}
+
+.header_input-icon {
+    background-image: url('./search-icon.png');
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    padding-left: 30px; /* adjust this value as needed to make space for the icon */
+}
+
+
+
+.header_nav-title {
+   
+    margin-right: auto;
+}
+
+main .article {
+    display: block;
+    background-color: yellow;
+}
