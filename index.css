@@ -1,62 +1,92 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: "Inter";
+    box-sizing: border-box;
 }
 
-.container {
+
+.container {   
   width: 550px;
-  height: 780px;
-  background-color: silver;
-  /* text-align: center; */
-  padding: 82px 44px;
-  /* display: grid;
-  place-content: center;
-  grid-template-columns: 1fr;
-  grid-template-rows: repeat(4 1fr);
-  border-bottom: gray 1px solid; */
+  min-height: 780px;
+  padding: 0 44px;
   display: flex;
   flex-direction: column;
-  
+  background: #121212;
+     
 }
+
+
 header {
     position: relative;
-    width: 550px;
-    height: 208px;    
-    background-color: aqua;
+    width: 100%;
+    min-height: 208px;    
+    background-image: url('./header_background.png');
+    background-size: contain;  
+    width: calc(100% + 88px); 
     
+    margin-left: -44px   
 }
+
+
 
 .header_nav {
     width: 100%;
     position: absolute;
-    top: 50%;  
+    top: 50%;
+    
     display: flex;  
+    color: #FFFFFF;   
+}
 
+.header_nav-title {
+    padding-left: 44px;
+    font-size: 43px;
+    font-weight: 800;
+    line-height: 24px;
+}
+
+.header_nav_link {
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 20px;
+    padding-right: 44px;
+}
+.header_input {
+    width: 462px;
+    height: 38px;
+    position: absolute;
+    bottom: -16px;
+    left: 44px;
+    display: flex;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
    
 }
 
-.header_input {
-    width: 462px;
-    height: 20px;
-    position: absolute;
-    bottom: -10px;
-    left: 44px;
-    display: flex;
+.header_input input::placeholder {
+    color: #A5A5A5; 
 }
+
 
 .header_input-text {
     width: 342px;
+    color: #A5A5A5;
+        
 }
 
 .header_input-button {
     width: 120px;
+    color: #FFFFFF;
+    background: #4B4B4B;
 }
 
 .header_input-icon {
     background-image: url('./search-icon.png');
     background-position: 10px center;
     background-repeat: no-repeat;
-    padding-left: 30px; /* adjust this value as needed to make space for the icon */
+    padding-left: 30px; 
 }
 
 .header_nav-title {
@@ -67,13 +97,11 @@ main {
     display: flex;
     flex-direction: column;
     margin: 45px 0; 
-
 }
 
 .article {
-    display: flex;
-    background-color: green;
-    margin-bottom: 45.59;
+    display: flex;  
+    margin-bottom: 45.59px;
 }
 
 .movie_image {
@@ -84,7 +112,7 @@ main {
 
 .movie_image-item {
     display: block;
-    min-width: 100%
+    min-width: 100%;
 }
 
 .movie_text {
@@ -94,7 +122,6 @@ main {
 .movie_text-title {
     width: 100%;
     display: flex;
-    background-color: royalblue;
     gap: 5px;
 }
 
@@ -102,12 +129,43 @@ main {
     display: flex;
     margin-top: 11px;
     margin-bottom: 8px;
-    /* justify-content: space-between; */
     gap: 18px;
 }
 
-.movie_text- {
+.movie_text {
     width: 342px;
     height: 60px;
-    text-align: left;
+    text-align: left;  
+}
+
+.movie_text-name {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    color: #FFFFFF;
+}
+
+.movie_text-star {
+    align-self: center;
+    height: 100%;;
+}
+.movie_text-rating {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.movie_text-info {
+    color: #FFFFFF;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.movie_text-summary {
+    color: #A5A5A5;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
 }
