@@ -6,8 +6,8 @@ body {
 .container {
   width: 550px;
   height: 780px;
-  background-color: red;
-  text-align: center;
+  background-color: silver;
+  /* text-align: center; */
   padding: 82px 44px;
   /* display: grid;
   place-content: center;
@@ -20,6 +20,7 @@ body {
 }
 header {
     position: relative;
+    width: 550px;
     height: 208px;    
     background-color: aqua;
     
@@ -58,14 +59,55 @@ header {
     padding-left: 30px; /* adjust this value as needed to make space for the icon */
 }
 
-
-
 .header_nav-title {
-   
-    margin-right: auto;
+   margin-right: auto;
 }
 
-main .article {
+main {
+    display: flex;
+    flex-direction: column;
+    margin: 45px 0; 
+
+}
+
+.article {
+    display: flex;
+    background-color: green;
+    margin-bottom: 45.59;
+}
+
+.movie_image {
+    width:99px;
+    height: 147.41px;
+    margin-right: 21px;
+}
+
+.movie_image-item {
     display: block;
-    background-color: yellow;
+    min-width: 100%
+}
+
+.movie_text {
+    width: 342px;
+}
+
+.movie_text-title {
+    width: 100%;
+    display: flex;
+    background-color: royalblue;
+    gap: 5px;
+}
+
+.movie_text-info {
+    display: flex;
+    margin-top: 11px;
+    margin-bottom: 8px;
+    /* justify-content: space-between; */
+    gap: 18px;
+}
+
+.movie_text- {
+    width: 342px;
+    height: 60px;
+    text-align: left;
 }
