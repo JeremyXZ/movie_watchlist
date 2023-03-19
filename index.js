@@ -35,16 +35,16 @@ const showMovies = (movies) => {
    const moviesList =  movies.map(movie => `
     <div class="article">
         <div class="movie_image">
-            // <img class="movie_image-item" src="${movie.Poster}">
+             <img class="movie_image-item" src="${movie.Poster}">
         </div>
         <div class="movie_text">
             <div class="movie_text-title">
                 <span class="movie_text-name">${movie.Title}</span> 
                 <span class="movie_text-star"><img src="./star-icon.png"></span>
-                <span class="movie_text-rating">${movie.Ratings[0].value}</span>                       
+                <span class="movie_text-rating">${movie.Ratings[0].Value}</span>                       
             </div>
             <div class="movie_text-info">
-                <div class="movie_text-time">${movie.time}</div>
+                <div class="movie_text-time">${movie.Runtime}</div>
                 <div class="movie_text-genre">${movie.Genre}</div>
                 <div class="movie_text-icon">
                 <img src="./plus_icon.png"> 
