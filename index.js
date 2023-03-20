@@ -1,17 +1,30 @@
 
 const main = document.querySelector('main')
+const starting = document.querySelector('.starting')
+const searchMVButton = document.querySelector('#search-btn')
+clickedElements = [1, 4, 5]
+ 
+searchMVButton.addEventListener('click', () => {
+    const inputValue = document.querySelector('#input').value
+    getMoviesList(inputValue)
+})
+
 
 const getMoviesList = async (searchTerm) => {
     
-    const response = await fetch(`http://www.omdbapi.com/?s=${searchTerm}&apikey=8777769f`)
-    const moviesData = await (response.json())
-    console.log(moviesData.Search)
-    const moviesIds = getMoviesIds(moviesData.Search)
-    console.log(moviesIds)
-    const movies = await Promise.all(moviesIds.map(searchById))
-    console.log(movies)
-    showMovies(movies)
-  
+    if(searchTerm) {
+        const response = await fetch(`http://www.omdbapi.com/?s=${searchTerm}&apikey=8777769f`)
+        const moviesData = await (response.json())
+        const moviesIds = getMoviesIds(moviesData.Search)
+        const movies = await Promise.all(moviesIds.map(searchById))
+        const button = document.querySelector(".movie_text-button");
+
+        starting.style.display = "none"
+        showMovies(movies)
+       
+    } else {
+        starting.style.display = "flex"
+    }      
 }
 
 const getMoviesIds = (arr) => {
@@ -19,17 +32,21 @@ const getMoviesIds = (arr) => {
     return moviesIds    
 }
 
-
-
-
 const searchById = async (id) => {
     const response = await fetch(`http://www.omdbapi.com/?i=${id}&plot=full&apikey=8777769f`)
     const data = await (response.json())
     return data
 }
 
-getMoviesList("blade runner")
+const saveArticleToLocalStorage = (articleElement) => {
+    
+    clickedElements.push(articleElement)
+    localStorage.setItem('clickedMovies', clickedElements);
 
+  
+     console.log(localStoragegit)   
+  }
+  
 
 const showMovies = (movies) => {
    const moviesList =  movies.map(movie => `
@@ -46,19 +63,30 @@ const showMovies = (movies) => {
             <div class="movie_text-info">
                 <div class="movie_text-time">${movie.Runtime}</div>
                 <div class="movie_text-genre">${movie.Genre}</div>
-                <div class="movie_text-icon">
-                <img src="./plus_icon.png"> 
-                <a class="movie_text-select">WatchList</a>                                
-                </div>                                                 
+                <button class="movie_text-button">
+                    <img src="./plus_icon.png">
+                    <span class="movie_text-select">WatchList</span>
+                </button>                                          
+                                                                
             </div>
             <p class="movie_text-summary">${movie.Plot}</p>
         </div>                    
     </div>
     
     `).join('')
+     
+    main.innerHTML = moviesList   
 
-    main.innerHTML = moviesList
+    const buttons = document.querySelectorAll(".movie_text-button");
+    buttons.forEach(button => {
+      button.addEventListener("click", (event) => {
+        console.log("Button clicked");
+        
+        const currentArticle = event.target.closest('.article')
+        if(currentArticle) {           
+            saveArticleToLocalStorage(currentArticle);
+        }           
+      });      
+    });
 
 }
-
-getMovies('blade runner')

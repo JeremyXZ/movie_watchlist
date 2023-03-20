@@ -12,7 +12,7 @@
                 </div>
                 <div class="header_input">                
                     <input type="text" class="header_input-text header_input-icon" placeholder="Blade Runner">     
-                    <button class="header_input-button">Search</button>
+                    <div class="header_input-button">Search</div>
                 </div>
             </header>
             <main>
@@ -23,17 +23,16 @@
                     <div class="movie_text">
                         <div class="movie_text-title">
                             <span class="movie_text-name">Blade Runner</span> 
-                            <span class="movie_text-star"><img src="./star-icon.png"></span>
-                           
+                            <span class="movie_text-star"><img src="./star-icon.png"></span>                           
                             <span class="movie_text-rating">8.1</span>                       
                         </div>
                         <div class="movie_text-info">
                             <div class="movie_text-time">116 min</div>
                             <div class="movie_text-genre">Drama, Mystery, Sci-fi</div>
-                            <div class="movie_text-icon">
-                                <img src="./plus_icon.png"> 
-                                <a class="movie_text-select">WatchList</a>                                
-                            </div>
+                            <button class="movie_text-button">
+                                <img src="./plus_icon.png">
+                                <span class="movie_text-select">WatchList</span>
+                            </button> 
                                                  
                         </div>
                         <p class="movie_text-summary">A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to Earth to find their creator.</p>
@@ -53,15 +52,15 @@
                         <div class="movie_text-info">
                             <div class="movie_text-time">116 min</div>
                             <div class="movie_text-genre">Drama, Mistery, Sci-fi</div>
-                            <div class="movie_text-icon">
+                            <button class="movie_text-button">
                                 <img src="./plus_icon.png">
-                                <a class="movie_text-select">WatchList</a>
-                            </div>                        
+                                <span class="movie_text-select">WatchList</span>
+                            </button>                       
                         </div>
                         <p class="movie_text-summary">A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to Earth to find their creator.</p>
                     </div>                    
                 </div>
-                <div class="article">
+                <div class="article" id="">
                     <div class="movie_image">
                         <img class="movie_image-item" src="./first_film.png">
                     </div>
@@ -75,10 +74,10 @@
                         <div class="movie_text-info">
                             <div class="movie_text-time">116 min</div>
                             <div class="movie_text-genre">Drama, Mistery, Sci-fi</div>
-                            <div class="movie_text-icon">
+                            <button class="movie_text-button"" id="add-btn">
                                 <img src="./plus_icon.png">
-                                <a class="movie_text-select">WatchList</a>
-                            </div>                        
+                                <span class="movie_text-select">WatchList</span>
+                            </button>                       
                         </div>
                         <p class="movie_text-summary">A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to Earth to find their creator.</p>
                     </div>                    
