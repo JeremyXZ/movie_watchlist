@@ -1,13 +1,13 @@
 
 const searchPage = document.querySelector('#search-page')
-const starting = document.querySelector('.starting')
-const tryAgain = document.querySelector('.try-again')
-const empty = document.querySelector('.empty')
+const startingEl = document.querySelector('.starting')
+const tryAgainEl = document.querySelector('.try-again')
+const emptyEl = document.querySelector('.empty')
 const searchMVButton = document.querySelector('#search-btn')
 const clickedElements = []
 const navButton = document.querySelector('#nav-btn')
 const watchPage = document.querySelector('#watch-page')
-const article = document.querySelector('.article')
+
  
 if(searchMVButton) {
     searchMVButton.addEventListener('click', () => {
@@ -15,32 +15,7 @@ if(searchMVButton) {
         getMoviesList(inputValue)
     })
 }
-
-// const getMoviesList = async (searchTerm) => {
-    
-//     if(searchTerm) {
-//         const response = await fetch(`http://www.omdbapi.com/?s=${searchTerm}&apikey=8777769f`)
-//         const moviesData = await (response.json())
-//         console.log(moviesData)
-//         if(moviesData.Response) {
-//             starting.style.display = "none"
-//             tryAgain.style.display= "flex"
-            
-//         } else {
-//             const moviesIds = getMoviesIds(moviesData.Search)
-//             const movies = await Promise.all(moviesIds.map(searchById))
-//             const button = document.querySelector(".movie_text-button");
-//             starting.style.display = "none"
-//             showMovies(movies)
-//         }
-               
-//     } else {
-//         starting.style.display = "flex"
-       
-//     }      
-// }
-
- const getMoviesList = async (searchTerm) => {
+const getMoviesList = async (searchTerm) => {
     
         if(searchTerm) {
             const response = await fetch(`http://www.omdbapi.com/?s=${searchTerm}&apikey=8777769f`)
@@ -50,44 +25,22 @@ if(searchMVButton) {
                 const moviesIds = getMoviesIds(moviesData.Search)
                 const movies = await Promise.all(moviesIds.map(searchById))
                 const button = document.querySelector(".movie_text-button");
-                starting.style.display = "none"
+                startingEl.style.display = "none"
                 showMovies(movies)
             } else {
-                starting.style.display = "none"
-                tryAgain.style.display= "flex"
+                startingEl.style.display = "none"
+                tryAgainEl.style.display= "flex"
             }
                    
         } else {
-            starting.style.display = "flex"
+            startingEl.style.display = "flex"
            
         }      
     }
-    
-    
-    
 
-
-// if(moviesData.Response) {
-//     if (moviesData.Search) {
-//       const moviesIds = getMoviesIds(moviesData.Search)
-//       const movies = await Promise.all(moviesIds.map(searchById))
-//       const button = document.querySelector(".movie_text-button");
-//       starting.style.display = "none"
-//       showMovies(movies)
-//     } else {
-//       starting.style.display = "none"
-//       tryAgain.style.display= "block"
-//     }
-//   } else {
-//     starting.style.display = "none"
-//     tryAgain.style.display= "block"
-//   }
 
 const getMoviesIds = (arr) => {
-    // if(arr && arr.length !== 0) {
-    //     const moviesIds = arr.map(movie => movie.imdbID)
-    //     return moviesIds  
-    // }
+  
     const moviesIds = arr.map(movie => movie.imdbID)
     return moviesIds  
     
@@ -161,13 +114,12 @@ if(watchPage) {
        
         window.addEventListener('load', () => {
             const savedMovies = JSON.parse(localStorage.getItem('clickedMovies'))
-            empty.style.display = "none"                   
+            emptyEl.style.display = "none"                   
             watchPage.innerHTML = savedMovies       
         })
     } else {
-        empty.style.display = "flex"
-    }  
-    
+        emptyEl.style.display = "flex"
+    }      
 }
 
 
