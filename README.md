@@ -3,7 +3,9 @@ Another solo project from Scrimba -- involving CSS and API
 
 Here is the screenshot of the visual prototype:
 
-![ALT board_image](./movie_list.png)
+![ALT search_page](./movie_list.png)
+![ALT watch_list_page](./watchList-page.png)
+
 
 
 Key learning points:
