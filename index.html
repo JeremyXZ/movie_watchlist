@@ -4,87 +4,25 @@
     </head>
     <body>
         <div class="container">
-            <header class="header">
-                
+            <header class="header">                
                 <div class="header_nav">
                     <div class="header_nav-title">Find your film</div>
-                    <nav class="header_nav_link">My WatchList</nav>
+                    <button class="header_nav_button" id="nav-btn" ><a href="watchlist.html">My WatchList</a></button>
                 </div>
                 <div class="header_input">                
-                    <input type="text" class="header_input-text header_input-icon" placeholder="Blade Runner">     
-                    <div class="header_input-button">Search</div>
+                    <input id="input" type="text" class="header_input-text header_input-icon" placeholder="Blade Runner">     
+                    <button id="search-btn" class="header_input-button">Search</button>
                 </div>
             </header>
-            <main>
-                <div class="article">
-                    <div class="movie_image">
-                        <img class="movie_image-item" src="./first_film.png">
-                    </div>
-                    <div class="movie_text">
-                        <div class="movie_text-title">
-                            <span class="movie_text-name">Blade Runner</span> 
-                            <span class="movie_text-star"><img src="./star-icon.png"></span>                           
-                            <span class="movie_text-rating">8.1</span>                       
-                        </div>
-                        <div class="movie_text-info">
-                            <div class="movie_text-time">116 min</div>
-                            <div class="movie_text-genre">Drama, Mystery, Sci-fi</div>
-                            <button class="movie_text-button">
-                                <img src="./plus_icon.png">
-                                <span class="movie_text-select">WatchList</span>
-                            </button> 
-                                                 
-                        </div>
-                        <p class="movie_text-summary">A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to Earth to find their creator.</p>
-                    </div>                    
-                </div>
-                <div class="article">
-                    <div class="movie_image">
-                        <img class="movie_image-item" src="./first_film.png">
-                    </div>
-                    <div class="movie_text">
-                        <div class="movie_text-title">
-                            <span class="movie_text-name" id="">Blade Runner</span> 
-                            <!-- <span class="movie_text-star"><img src="./star-icon.png"></span> -->
-                            <img src="./star-icon.png" class="movie_text-star">
-                            <span class="movie_text-rating">3</span>                       
-                        </div>
-                        <div class="movie_text-info">
-                            <div class="movie_text-time">116 min</div>
-                            <div class="movie_text-genre">Drama, Mistery, Sci-fi</div>
-                            <button class="movie_text-button">
-                                <img src="./plus_icon.png">
-                                <span class="movie_text-select">WatchList</span>
-                            </button>                       
-                        </div>
-                        <p class="movie_text-summary">A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to Earth to find their creator.</p>
-                    </div>                    
-                </div>
-                <div class="article" id="">
-                    <div class="movie_image">
-                        <img class="movie_image-item" src="./first_film.png">
-                    </div>
-                    <div class="movie_text">
-                        <div class="movie_text-title">
-                            <span class="movie_text-name">Blade Runner</span> 
-                            <!-- <span class="movie_text-star"><img src="./star-icon.png"></span> -->
-                            <img src="./star-icon.png" class="movie_text-star">
-                            <span class="movie_text-rating">3</span>                       
-                        </div>
-                        <div class="movie_text-info">
-                            <div class="movie_text-time">116 min</div>
-                            <div class="movie_text-genre">Drama, Mistery, Sci-fi</div>
-                            <button class="movie_text-button"" id="add-btn">
-                                <img src="./plus_icon.png">
-                                <span class="movie_text-select">WatchList</span>
-                            </button>                       
-                        </div>
-                        <p class="movie_text-summary">A blade runner must pursue and terminate four replicants who stole a ship in space, and have returned to Earth to find their creator.</p>
-                    </div>                    
-                </div>
-
+            <main class="index-main" id="search-page">
+                <div class="starting">
+                    <div class="starting_image"><img src="./film_icon.png"></div>
+                    <p class="starting_text">Start exploring</p>
+                </div>              
+                <p class="try-again">Unable to find what you're looking for. Please try another search.</p>
             </main>
         </div>   
         <script src="index.js"></script>
     </body>
 </html>
+<a href="flashcard/flashcard.html"

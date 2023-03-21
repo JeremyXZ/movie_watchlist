@@ -13,7 +13,7 @@ html, body {
   flex: 1;
   min-width: 550px;
   min-height:100%;
-  padding: 92px 44px;
+  padding: 0 44px;
   display: flex;
   flex-direction: column;
   align-items: stretch; 
@@ -64,93 +64,57 @@ header {
       
 }
 
-.header_input {
-    width: 462px;
-    height: 38px;
-    position: absolute;
-    bottom: -16px;
-    left: 44px;
-    display: flex;
-    font-weight: 500;
-    font-size: 14px;
-    line-height: 20px;
-   
-}
-
-.header_input input::placeholder {
-    color: #A5A5A5; 
-}
-
-
-.header_input-text {
-    width: 342px;
-    color: #A5A5A5;
-        
-}
-
-.header_input-button {
-    width: 120px;
-    color: #FFFFFF;
-    background: #4B4B4B;
-    cursor: pointer;
-}
-
-.header_input-button:active {
-    transform: translateY(2px);
-    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
-  }
-
-.header_input-icon {
-    background-image: url('./search-icon.png');
-    background-position: 10px center;
-    background-repeat: no-repeat;
-    padding-left: 30px; 
-}
-
 .header_nav-title {
    margin-right: auto;
 }
 
-.index-main {
+
+/* watchlist page start from here*/
+.watch-main {
     display: flex;
     flex-direction: column;
     margin: 45px 0;
     height: 100%; 
-    /* flex: 1; */
+    
 }
 
-.starting {
+.empty {
     height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
 
 }
 
-.starting_text {
+
+.empty_title {
     font-weight: 700;
     font-size: 18px;
-    color: rgba(46, 46, 47, 1);
-    margin-top: 8.75;
-
-}
-
-.try-again {
-    height: 100%;
-    display: none;
-    justify-content: center;
-    align-items: center;
-    font-weight: 700;
-    font-size: 18px;
+    line-height: 28px;
     color: rgba(120, 120, 120, 1);
 
 }
 
+.empty_link {
+    display: flex;
+    align-items: center;
+}
+
+.empty_btn-text {
+    font-weight: 700;
+    font-size: 14px;
+    color: #FFFFFF;
+    margin-left: 7px;
+}
+
+
 .article {
     display: flex;  
+    flex-direction: row;
     margin-bottom: 45.59px;
     border-bottom: 1px solid rgba(44, 44, 44, 1);
+    /* background-color: red; */
 }
 .article:last-child {
     border-bottom: none;
@@ -219,9 +183,7 @@ header {
    /* color: #FFFFFF; */
    background-color: #121212; 
    border: #121212;
-   cursor: pointer;
- 
-   
+   cursor: pointer;   
 }
 
 .movie_text-select {
