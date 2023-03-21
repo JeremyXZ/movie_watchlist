@@ -18,7 +18,7 @@ when it's deployed.
 Using localStorage and rendering the stored data
 
 Saving data on one page and retrieving them on another proved to be a bit tricky. I used
-conditonals to detact if a second page is present, if yes, the data is retrieved and rendered 
+conditonals to detact if a second page is present, if yes, the data are retrieved and rendered 
 to the second page. There are quite a few actions for showing and hiding some messages. I struggled
 a bit to figure out the logics of arraning various messages properly, partly because they appeared 
 in two seperate pages. 
