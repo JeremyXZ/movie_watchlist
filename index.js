@@ -38,7 +38,6 @@ const getMoviesList = async (searchTerm) => {
         }      
     }
 
-
 const getMoviesIds = (arr) => {
   
     const moviesIds = arr.map(movie => movie.imdbID)
@@ -87,15 +86,14 @@ const showMovies = (movies) => {
         </div>                    
     </div>
     
-    `).join('')
-     
+    `).join('')   
+
     searchPage.innerHTML = moviesList   
 
     const buttons = document.querySelectorAll(".movie_text-button");
     buttons.forEach(button => {
       button.addEventListener("click", (event) => {
-        console.log("Button clicked");
-        
+               
         const currentArticle = event.target.closest('.article')
         if(currentArticle) {           
             saveArticleToLocalStorage(currentArticle.outerHTML);
@@ -104,25 +102,57 @@ const showMovies = (movies) => {
     });
 
 }
+// pass in the retrieved movies list and turn it into an array of HTML element strings, 
+// and then loop through each movie and change the orginal plus icon to a minor icon inside
+//a button of each movie
 
-const moveNextPage = () => {
-    window.location.href = 'watchlist.html'     
-}
+const replaceAttributes = (elementArr)  => {
 
+    const articleDivs = elementArr.map(div => {
+        const el = document.createElement('div');      
+        el.innerHTML = div.trim();
+        return el.firstChild;
+    });
+
+    articleDivs.forEach(div => {
+        const imgEl = div.querySelector('.movie_text-button img');      
+        imgEl.src = 'minor_icon.png'        
+    });     
+    return articleDivs.map(el => el.outerHTML)  
+ }
+
+
+//check if it's switching to watch_list page
 if(watchPage) {
+    //if there are data in localStorage with the key "clickedMovies"
     if(localStorage.getItem('clickedMovies')) {
-       
-        window.addEventListener('load', () => {
-            const savedMovies = JSON.parse(localStorage.getItem('clickedMovies'))
+       //when the whole page is loaded, obtain data from localStorage
+        window.addEventListener('load', () => {           
+            
+            const savedMovies = JSON.parse(localStorage.getItem('clickedMovies'))         
+            //pass to the modification function below the savedMovies (an array of html elements 
+            //with the class name "article")
+            // console.log("before replacement", savedMovies)
+          const newEl = replaceAttributes(savedMovies)            
+
+            console.log("from deleteBtn", newEl)
             emptyEl.style.display = "none"                   
-            watchPage.innerHTML = savedMovies       
+            watchPage.outerHTML = newEl                            
         })
+
+        //after the dom tree is ready, add the below eventlistener 
+        //to remove the closest "aricle" class element where the button is attached
+        document.addEventListener('click', (e) => {
+            const target = e.target.closest('.movie_text-button')
+            const articleEl = e.target.closest('.article')
+            if(target && articleEl ) {
+                articleEl.remove()
+            }
+        })
+
     } else {
         emptyEl.style.display = "flex"
     }      
 }
-
-
-
 
 

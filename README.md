@@ -33,7 +33,16 @@ merely doing a lot of tedious copy and paste actions.  The realy challengs lie i
 the layout and align and group various small elements together. 
 
 
+Most challenging bit:
 
+The hardest part of this project for me was to set up an eventListener to remove an individual movie among 
+a list retrieved from the localStorage.  Initially, I used forEach method to warp each button with an click
+eventListener, it involved too many DOM nodes, hard to implement, I changed the idea and used event delegation
+to simpligy things a lot.  It also took me quite a while to figure out where (or when) to place the eventListener
+among a couple of conditionals:
+After the page (WatchList page) has finished loading, the retrieval of the chosen movies has completed and the 
+"remove" buttons have been dynamically generated and added to the DOM, only at this moment, the eventListener 
+can be attached to the buttons.  
 
 
 
