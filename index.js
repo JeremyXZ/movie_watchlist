@@ -18,7 +18,7 @@ if(searchMVButton) {
 const getMoviesList = async (searchTerm) => {
     
         if(searchTerm) {
-            const response = await fetch(`http://www.omdbapi.com/?s=${searchTerm}&apikey=8777769f`)
+            const response = await fetch(`https://www.omdbapi.com/?s=${searchTerm}&apikey=8777769f`)
             const moviesData = await (response.json())
             console.log(moviesData)
             if(moviesData.Search) {
@@ -46,7 +46,7 @@ const getMoviesIds = (arr) => {
 }
 
 const searchById = async (id) => {
-    const response = await fetch(`http://www.omdbapi.com/?i=${id}&plot=full&apikey=8777769f`)
+    const response = await fetch(`https://www.omdbapi.com/?i=${id}&plot=full&apikey=8777769f`)
         const data = await (response.json())
         return data
     
