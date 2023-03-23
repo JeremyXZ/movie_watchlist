@@ -14,6 +14,14 @@ if(searchMVButton) {
         const inputValue = document.querySelector('#input').value
         getMoviesList(inputValue)
     })
+
+    input.addEventListener('keyup', (e) => {
+        if(e.keyCode ===  13) {            
+            const inputValue = e.target.value
+            getMoviesList(inputValue)
+            
+        }
+    })
 }
 const getMoviesList = async (searchTerm) => {
     
