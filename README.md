@@ -1,5 +1,7 @@
 # movie_watchlist
+# Try it on this demo site: https://jeremyxz.github.io/movie_watchlist/index.html
 Another solo project from Scrimba -- involving CSS and API
+
 
 Here is the screenshot of the visual prototype:
 
