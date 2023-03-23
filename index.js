@@ -1,5 +1,6 @@
 
 const searchPage = document.querySelector('#search-page')
+const inputEl = document.querySelector('#input')
 const startingEl = document.querySelector('.starting')
 const tryAgainEl = document.querySelector('.try-again')
 const emptyEl = document.querySelector('.empty')
@@ -15,7 +16,7 @@ if(searchMVButton) {
         getMoviesList(inputValue)
     })
 
-    input.addEventListener('keyup', (e) => {
+    inputEl.addEventListener('keyup', (e) => {
         if(e.keyCode ===  13) {            
             const inputValue = e.target.value
             getMoviesList(inputValue)
